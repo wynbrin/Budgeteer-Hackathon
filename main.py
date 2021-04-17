@@ -6,8 +6,15 @@ print("Welcome to the budgeteer! Please choose a csv file name to import")
 filename = "test.csv"
 mydict = {}
 
-dict_from_csv = pd.read_csv(filename, header=None, index_col=0, squeeze=True)
-print(dict_from_csv)
+dict_from_csv = pd.read_csv(filename)
+var = dict_from_csv.loc[dict_from_csv['Year'] == 2021]
+print(var)
+
+# Take year, if year == 2021, separate all those rows, save as 2021.json
+# We can then separate it further by month 
+
+
+
 # formatted = json.dumps(dict_from_csv, indent=4)
 # print(formatted)
 
