@@ -8,8 +8,8 @@ mydict = {}
 
 dict_from_csv = pd.read_csv(filename)
 var = dict_from_csv.loc[dict_from_csv['Year'] == 2021]
-print(var)
-
+print(dict_from_csv['Expenses($)'])
+set(var['Income'].drop_duplicates())
 # Take year, if year == 2021, separate all those rows, save as 2021.json
 # We can then separate it further by month 
 
