@@ -1,14 +1,15 @@
 import csv
+import pandas as pd
+import json
 
 print("Welcome to the budgeteer! Please choose a csv file name to import")
 filename = "test.csv"
 mydict = {}
 
-with open(filename, mode='r') as inp:
-    reader = csv.reader(inp)
-    dict_from_csv = {rows[0]:rows[1] for rows in reader}
-
+dict_from_csv = pd.read_csv(filename, header=None, index_col=0, squeeze=True)
 print(dict_from_csv)
+# formatted = json.dumps(dict_from_csv, indent=4)
+# print(formatted)
 
 
 
