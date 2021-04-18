@@ -109,7 +109,7 @@ class budgetGrouping():
         
     # Function for opening the
     # file explorer window
-    def browseFiles():
+    def browseFiles(self):
         filename = filedialog.askopenfilename(initialdir = "/",
                                             title = "Select a File",
                                             filetypes = (("Text files",
