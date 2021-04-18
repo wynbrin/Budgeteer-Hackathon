@@ -52,5 +52,8 @@ def update_chart(dims):
     return fig
 
 app.run_server(debug=True)'''
+
+fig = px.line(grouped, x="Date", y="Current Total")
+fig.show()
 # Using input expense sheet(above) and input income sheet, use same method 
 # to plot a new df in which each day is a continous sum
