@@ -27,7 +27,7 @@ def reconfigure(df):
 class budgetGrouping():
 
     def __init__(self, filename = 'test.csv'):
-        self.df = pd.read_csv(filename)
+        self.df = pd.read_csv(filename).fillna(0)
     
     def group(self):
         
@@ -64,19 +64,41 @@ class budgetGrouping():
     def reformat(self):
         
         new_date = list()
+        expense = list()
         df = reconfigure(self.df)
+        total_asset = 0
+        total = list()
         for i in range(len(self.df)):
+            
             y = str(self.df['Year'][i])
             m = str(self.df['Month'][i])
             d = str(self.df['Day'][i])
 
             new_date.append(y +'-'+m+'-'+d)
 
+
+            expense.append(-(float(self.df['Expenses($)'][i])))
+            
         
         self.df['Date'] = new_date
+        self.df['Expenses'] = expense
+       
         del self.df['Year']
         del self.df['Month']
         del self.df['Day']
+        del self.df['Expenses($)']
+        for i in range(len(self.df)):
+            if i == 0:
+
+                g = self.df['Income'][i].replace(',', '')
+                total_asset = float(g) + float(expense[i])
+
+                total.append(total_asset)
+            else:
+                g = self.df['Income'][i].replace(',', '')
+                total_asset = total[i-1] + (float(g) + float(expense[i]))
+                total.append(total_asset)
+        self.df["Current Total"] = total
         return self.df
 
 

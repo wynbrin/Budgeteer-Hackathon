@@ -18,7 +18,7 @@ grouped = budge.reformat()
 print(grouped)
 #plotf = px.data.stocks()
 # Plot Expenses
-
+'''
 all_dims = ['Date', 'Income', 'Expenses($)']
 app = dash.Dash(__name__)
 
@@ -51,6 +51,6 @@ def update_chart(dims):
     )
     return fig
 
-app.run_server(debug=True)
+app.run_server(debug=True)'''
 # Using input expense sheet(above) and input income sheet, use same method 
 # to plot a new df in which each day is a continous sum
