@@ -1,0 +1,51 @@
+Year,Month,Day,Income,Expenses,Description,Reoccurring?,Essential?
+2021,1,26,0,853,Bought a camera,No,No
+2021,1,26,0,90.62,Amazon,No,No
+2021,1,27,0,106.61,Amazon,No,No
+2021,1,30,0,17.05,Lunch,No,No
+2021,2,11,0,260.67,Credit card,Yes,Yes
+2021,2,13,1469.24,0,Sold golf cart,Yes,Yes?
+2021,2,13,0,7.76,Wawa,No,No
+2021,2,14,50,0,Sold old phone,No,No
+2021,2,14,0,51.16,Amazon,No,No
+2021,2,18,2933.45,0,Paycheck,Yes,Yes
+2021,2,20,0,8.15,Breakfast,No,No
+2021,2,22,0,5.31,CVS,Yes,No
+2021,3,3,0,37.31,Amazon,No,Yes
+2021,3,3,0,40,Bought video game,No,Yes
+2021,3,4,"2,933.45",0,Paycheck,Yes,Yes
+2021,3,11,0,260.67,Amazon,Yes,Yes
+2021,3,11,0,7940.05,Bought a new car,Yes,Yes
+2021,3,12,402.08,0,Sold old laptop,No,No
+2021,3,12,0,34.09,Amazon,No,No
+2021,3,18,2933.45,0,Paycheck,Yes,Yes
+2021,3,22,0,5.31,Breakfast,Yes,No
+2021,3,22,0,29.99,Bought video game,No,No
+2021,3,22,0,433.66,Bought football tickets,Yes,Yes
+2021,3,24,0,9.47,Lunch,No,No
+2021,3,25,0,61.99,Bought video game,No,Yes
+2021,3,25,0,11.71,Bought dinner,No,No
+2021,3,26,0,398.36,Bought a new phone,No,No
+2021,3,27,0,53.26,Amazon,No,Yes
+2021,3,30,0,36.21,Amazon,No,No
+2021,4,1,0,87.43,Autozone,No,No
+2021,4,3,0,14.92,CVS,No,No
+2021,4,5,2933.45,0,Paycheck,Yes,Yes
+2021,4,5,0,40.88,Bought dinner,No,No
+2021,4,6,46.88,0,Sold old phone,No,No
+2021,4,7,40,0,Sold old headphones,No,No
+2021,4,8,0,53.3,Bought new headphones,No,No
+2021,4,8,0,12.79,Bought lunch,No,No
+2021,4,12,0,20,Gas,No,No
+2021,4,12,162,0,Paid for side gig,No,No
+2021,4,12,0,15.89,Bought lunch,Yes,No
+2021,4,12,0,58.29,Bought movie tickets and snacks,No,No
+2021,4,16,0,41.55,Bowling expenses,No,No
+2021,4,23,0,24.99,Dinner order,No,No
+2021,4,23,0,0.22,Tip for waiter who spit in my food,No,No
+2021,4,28,0,54,Amazon,No,No
+2021,4,28,0,26.36,CVS,No,No
+2021,4,28,0,4.6,Tolls,No,No
+2021,4,30,0,4.52,Breakfast,No,No
+2021,4,30,0,3.47,More breakfast,No,No
+2021,4,30,2933.45,0,Paycheck,No,No

@@ -35,7 +35,7 @@ class budgetGrouping():
             print ("This csv file has been selected")
         self.df = pd.read_csv(filename)
         self.df['Description'] = self.df['Description'].fillna('Default')
-        self.df['Expenses($)'] = self.df['Expenses($)'].fillna(0)
+        self.df['Expenses'] = self.df['Expenses'].fillna(0)
     def group(self):
         
         self.df = reconfigure(self.df)
@@ -57,7 +57,7 @@ class budgetGrouping():
 
             info['Purchase ID'] = p_id
             info['Income'] = self.df["Income"][i]
-            info['Expenses'] = self.df["Expenses($)"][i]
+            info['Expenses'] = self.df["Expenses"][i]
             info['Description'] = self.df['Description'][i]
             info['Reoccurring'] = self.df['Reoccurring?'][i]
             info["Essential"] = self.df['Essential?'][i]
@@ -84,7 +84,7 @@ class budgetGrouping():
             new_date.append(y +'-'+m+'-'+d)
 
 
-            expense.append(-(float(self.df['Expenses($)'][i])))
+            expense.append(-(float(self.df['Expenses'][i])))
             
         
         self.df['Date'] = new_date
@@ -93,7 +93,7 @@ class budgetGrouping():
         del self.df['Year']
         del self.df['Month']
         del self.df['Day']
-        del self.df['Expenses($)']
+        del self.df['Expenses']
         for i in range(len(self.df)):
             if i == 0:
 
