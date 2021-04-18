@@ -2,8 +2,8 @@ import csv
 import pandas as pd
 import json
 import random
-
-
+import tkinter
+from tkinter import filedialog
 def reconfigure(df):
         change_e = list()
         change_reoc =list()
@@ -27,6 +27,12 @@ def reconfigure(df):
 class budgetGrouping():
 
     def __init__(self, filename = 'test.csv'):
+        print("Input a csv file:")
+        root = tkinter.Tk()
+        root.withdraw()
+        filename = filedialog.askopenfile(parent=root,mode='r',filetypes=[("CSV file","*.csv")],title='Choose a csv file')
+        if filename != None:
+            print ("This csv file has been selected")
         self.df = pd.read_csv(filename).fillna(0)
     
     def group(self):
