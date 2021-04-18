@@ -33,7 +33,8 @@ class budgetGrouping():
         filename = filedialog.askopenfile(parent=root,mode='r',filetypes=[("CSV file","*.csv")],title='Choose a csv file')
         if filename != None:
             print ("This csv file has been selected")
-        self.df = pd.read_csv(filename).fillna(0)
+        self.df = pd.read_csv(filename)
+        self.df['Description'] = self.df['Description'].fillna('Default')
     
     def group(self):
         
@@ -83,7 +84,7 @@ class budgetGrouping():
             new_date.append(y +'-'+m+'-'+d)
 
 
-            expense.append(-(float(self.df['Expenses($)'][i])))
+            expense.append(-(float(self.df['Expenses ($)'][i])))
             
         
         self.df['Date'] = new_date
@@ -92,17 +93,23 @@ class budgetGrouping():
         del self.df['Year']
         del self.df['Month']
         del self.df['Day']
-        del self.df['Expenses($)']
+        del self.df['Expenses ($)']
         for i in range(len(self.df)):
             if i == 0:
 
-                g = self.df['Income'][i].replace(',', '')
-                total_asset = float(g) + float(expense[i])
+                if self.df['Income'][i] is type(str):
+                    income = self.df['Income'][i].replace(',', '')
+                else:
+                    income = self.df['Income'][i]   
+                    total_asset = float(income) + float(expense[i])
 
                 total.append(total_asset)
             else:
-                g = self.df['Income'][i].replace(',', '')
-                total_asset = total[i-1] + (float(g) + float(expense[i]))
+                if self.df['Income'][i] is type(str):
+                    income = self.df['Income'][i].replace(',', '')
+                else:
+                    income = self.df['Income'][i]
+                    total_asset = total[i-1] + (float(income) + float(expense[i]))
                 total.append(total_asset)
         self.df["Current Total"] = total
         return self.df
