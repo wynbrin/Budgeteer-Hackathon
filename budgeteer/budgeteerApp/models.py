@@ -16,5 +16,5 @@ class Info(models.Model):
     description = models.CharField(max_length=500)
     reoccurring = models.BooleanField(default=0)
     essential = models.BooleanField(default=0)
-    category = models.IntegerField(default=0)
+    category =  models.CharField(max_length=500)
     date_entered = models.DateTimeField('date entered')
