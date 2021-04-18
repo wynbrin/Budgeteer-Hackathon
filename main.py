@@ -61,7 +61,24 @@ class budgetGrouping():
 
         return (group_date, group_info)
 
- 
+    def reformat(self):
+        
+        new_date = list()
+        for i in range(len(self.df)):
+            y = str(self.df['Year'][i])
+            m = str(self.df['Month'][i])
+            d = str(self.df['Day'][i])
+
+            new_date.append(y +'-'+m+'-'+d)
+
+        
+        self.df['Date'] = new_date
+        del self.df['Year']
+        del self.df['Month']
+        del self.df['Day']
+        return self.df
+
+
 
 #print("Welcome to the budgeteer! Please choose a csv file name to import")
 

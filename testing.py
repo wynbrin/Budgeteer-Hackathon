@@ -1,6 +1,6 @@
 
 from main import budgetGrouping
 budge = budgetGrouping()
-grouped = budge.group()
+grouped = budge.reformat()
 
 print(grouped)
