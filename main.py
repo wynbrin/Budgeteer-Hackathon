@@ -64,6 +64,7 @@ class budgetGrouping():
     def reformat(self):
         
         new_date = list()
+        df = reconfigure(self.df)
         for i in range(len(self.df)):
             y = str(self.df['Year'][i])
             m = str(self.df['Month'][i])
