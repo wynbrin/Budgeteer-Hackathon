@@ -35,7 +35,7 @@ class budgetGrouping():
             print ("This csv file has been selected")
         self.df = pd.read_csv(filename)
         self.df['Description'] = self.df['Description'].fillna('Default')
-    
+        self.df['Expenses($)'] = self.df['Expenses($)'].fillna(0)
     def group(self):
         
         self.df = reconfigure(self.df)
@@ -84,7 +84,7 @@ class budgetGrouping():
             new_date.append(y +'-'+m+'-'+d)
 
 
-            expense.append(-(float(self.df['Expenses ($)'][i])))
+            expense.append(-(float(self.df['Expenses($)'][i])))
             
         
         self.df['Date'] = new_date
@@ -93,11 +93,11 @@ class budgetGrouping():
         del self.df['Year']
         del self.df['Month']
         del self.df['Day']
-        del self.df['Expenses ($)']
+        del self.df['Expenses($)']
         for i in range(len(self.df)):
             if i == 0:
 
-                if self.df['Income'][i] is type(str):
+                if ',' in str(self.df['Income'][i] ):
                     income = self.df['Income'][i].replace(',', '')
                 else:
                     income = self.df['Income'][i]   
@@ -105,7 +105,7 @@ class budgetGrouping():
 
                 total.append(total_asset)
             else:
-                if self.df['Income'][i] is type(str):
+                if ',' in str(self.df['Income'][i] ):
                     income = self.df['Income'][i].replace(',', '')
                 else:
                     income = self.df['Income'][i]
